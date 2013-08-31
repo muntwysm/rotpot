@@ -1,0 +1,19 @@
+!!! 5
+%html
+  %head
+    %title Rotten Potatoes!
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+ 
+  %body
+  #login
+    = render :partial => 'sessions/login'
+    
+    - if flash[:notice]
+      #notice.message= flash[:notice]
+    - elsif flash[:warning]
+      #warning.message= flash[:warning]
+    %h1#main_heading 
+      %a{:href => root_path} Rotten Potatoes
+    = yield
