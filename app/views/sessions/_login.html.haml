@@ -2,4 +2,4 @@
   %p.welcome  Welcome, #{@current_user.name}!
   = link_to 'Log Out', logout_path
 - else
-  %p.login= link_to 'Sign in with Twitter', '/auth/twitter'
+  %p.login= link_to image_tag('sign-in-with-twitter-link.png'), '/auth/twitter'
