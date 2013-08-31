@@ -1,5 +1,5 @@
 Rotpot::Application.routes.draw do
-	get  'auth/:provider/callback' => 'sessions#create',:as => 'login'
+	get  'auth/twitter/callback' => 'sessions#create',:as => 'login'
 	post 'logout' => 'sessions#destroy'
 	get  'auth/failure' => 'sessions#failure'
 
