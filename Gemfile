@@ -4,6 +4,7 @@ gem 'rails', '3.1.0'
 gem 'pg'
 gem 'haml-rails'
 gem 'omniauth-twitter'
+gem 'figaro'
 
 
 # Gems used only for assets and not required
