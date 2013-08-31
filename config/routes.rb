@@ -1,6 +1,7 @@
 Rotpot::Application.routes.draw do
-	get  'auth/twitter/callback' => 'sessions#create',:as => 'login'
-	post 'logout' => 'sessions#destroy'
+	# Omniauth routes
+	get  'auth/:provider/callback' => 'sessions#create' # where Twitter will send back to
+	get  'logout' => 'sessions#destroy'
 	get  'auth/failure' => 'sessions#failure'
 
   resources :movies
