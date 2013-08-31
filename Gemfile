@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
-gem 'sqlite3'
+gem 'sqlite3', '1.3.8'
 gem 'haml-rails'
 gem 'omniauth-twitter'
 
@@ -27,8 +27,8 @@ group :test do
   gem 'turn', :require => false
 end
 
-group :development do
+group :production do
 	# To use debugger
-	#gem 'ruby-debug19', :require => 'ruby-debug'
+	gem 'pg'
 end
 
