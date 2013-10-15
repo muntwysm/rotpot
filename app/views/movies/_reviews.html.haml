@@ -1,0 +1,8 @@
+%ul#details
+  - @movie.reviews.each do |review|
+    %li <strong>#{review.moviegoer.name}</strong> gave it #{review.potatoes} potatoes. 
+    - if review.comment
+      "#{review.comment}"
+    - if @current_user.uid == review.moviegoer.uid 
+      = link_to 'Edit', edit_movie_review_path(@movie,review) 
+      = link_to 'Delete', movie_review_path(@movie,review), :method => :delete

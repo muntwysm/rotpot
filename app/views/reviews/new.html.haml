@@ -1,0 +1,8 @@
+%h2 Add review for #{@movie.title}
+ 
+= form_tag movie_reviews_path(@movie), :method => :post do
+
+  = render :partial => 'review_form'
+
+  = submit_tag 'Add Review'
+  = link_to 'Cancel', movie_path(@movie)

@@ -4,6 +4,9 @@ gem 'rails', '3.1.0'
 gem 'pg'
 gem 'haml-rails'
 gem 'omniauth-twitter'
+gem 'omniauth-facebook', '1.4.0'
+gem 'omniauth-google'
+gem 'omniauth-google-oauth2'
 gem 'figaro'
 
 
@@ -26,4 +29,12 @@ gem 'jquery-rails'
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
+end
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+  gem 'ruby-debug-base19', "0.11.24"
+	gem 'ruby-debug19', "0.11.6"
 end

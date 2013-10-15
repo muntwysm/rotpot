@@ -4,6 +4,9 @@ Rotpot::Application.routes.draw do
 	get  'logout' => 'sessions#destroy'
 	get  'auth/failure' => 'sessions#failure'
 
-  resources :movies
-  root :to => redirect('/movies')
+  resources :movies do
+	  resources :reviews
+	end
+	
+	root :to => redirect('/movies')
 end

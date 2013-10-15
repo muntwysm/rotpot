@@ -4,15 +4,13 @@
 %table#movies
   %thead
     %tr
-      %th{:id => "center"} 
       %th Movie Title
       %th Rating
       %th Release Date
       %th More Info
   %tbody
     - @movies.each_with_index do |movie, index|
-      %tr
-        %td= index+1
+      %tr{:class => ('adult' unless movie.rating =~ /^G|PG$/)}
         %td= link_to "#{movie.title}", movie_path(movie)
         %td= movie.rating
         %td= movie.release_date.to_s(:dBY)
