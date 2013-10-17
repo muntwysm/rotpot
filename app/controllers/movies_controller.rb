@@ -6,6 +6,12 @@ class MoviesController < ApplicationController
     @movies = @movies.recently_reviewed if params[:recently_reviewed]
   end
 
+	def search_tmdb
+	  # hardwire to simulate failure
+	  flash[:warning] = "'#{params[:search_terms]}' was not found in TMDb."
+	  redirect_to movies_path
+	end
+
   def index
   	@movies = Movie.order("title ASC")
   end
@@ -22,17 +28,6 @@ class MoviesController < ApplicationController
 	  	redirect_to movies_path
 	  end
   end
-
-
-=begin
-  def show
-    id = params[:id] # retrieve movie ID from URI route
-    @movie = Movie.find_by_id(id) # look up movie by unique ID
-    render :partial => 'movie', :object => @movie and return if request.xhr?
-    # will render app/views/movies/show.<extension> by default
-  end
-=end
-
 
 	def new
 		@movie = Movie.new

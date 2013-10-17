@@ -26,15 +26,16 @@ gem 'jquery-rails'
 # Deploy with Capistrano
 # gem 'capistrano'
 
-group :test do
-  # Pretty printed test output
+group :test, :development do
   gem 'turn', :require => false
-end
-
-group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'meta_request'
-  gem 'ruby-debug-base19', "0.11.24"
-	gem 'ruby-debug19', "0.11.6"
+  # gem 'ruby-debug-base19', '0.11.24'
+	# gem 'ruby-debug19', '0.11.6'
+  gem 'cucumber-rails'
+  gem 'cucumber-rails-training-wheels' # some pre-fabbed step definitions  
+  gem 'database_cleaner' # to clear Cucumber's test database between runs
+  gem 'capybara'         # lets Cucumber pretend to be a web browser
+  gem 'launchy'          # a useful debugging aid for user stories
 end

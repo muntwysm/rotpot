@@ -97,3 +97,12 @@ table td a {
 }
 
 tr:hover {background-color:#FFF380;}
+
+p.welcome {
+  text-align: right;
+  margin-right: 20px
+}
+p.login {
+  text-align: right;
+  margin-right: 20px
+}
